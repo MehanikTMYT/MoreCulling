@@ -1,6 +1,5 @@
 package ca.fxco.moreculling;
 
-import ca.fxco.moreculling.config.ModMenuConfig;
 import ca.fxco.moreculling.utils.CacheUtils;
 import net.minecraft.util.Unit;
 import net.minecraft.util.profiling.Profiler;
@@ -11,15 +10,14 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.AddClientReloadListenersEvent;
-import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.fml.loading.FMLPaths;
 
 @Mod(value = MoreCulling.MOD_ID, dist = Dist.CLIENT)
 public class MoreCullingNeoforge {
     public MoreCullingNeoforge(ModContainer container, IEventBus bus) {
-        MoreCulling.init();
-
-        container.registerExtensionPoint(IConfigScreenFactory.class,
-                (con, screen) ->  ModMenuConfig.createConfigScreen(screen));
+        // Fleet build: no Cloth Config. Options are edited on the More Culling page of Sodium's video settings
+        // (MoreCullingSodiumConfigBuilder) and stored in config/moreculling.toml.
+        MoreCulling.init(FMLPaths.CONFIGDIR.get());
 
         bus.addListener(this::registerReloadListener);
         bus.addListener(this::onClientSetup);
@@ -40,6 +38,5 @@ public class MoreCullingNeoforge {
     }
 
     public void onClientSetup(FMLClientSetupEvent event) {
-        ModMenuConfig.createConfigScreen(null);
     }
 }

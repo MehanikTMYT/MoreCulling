@@ -1,7 +1,6 @@
 package ca.fxco.moreculling.config;
 
 import ca.fxco.moreculling.utils.MathUtils;
-import me.shedaniel.autoconfig.AutoConfig;
 
 import static ca.fxco.moreculling.MoreCulling.CURRENT_VERSION;
 
@@ -14,7 +13,7 @@ public class ConfigUpdater {
         }
         if (config.version != CURRENT_VERSION) {
             config.version = CURRENT_VERSION;
-            AutoConfig.getConfigHolder(MoreCullingConfig.class).save();
+            ca.fxco.moreculling.MoreCulling.saveConfig();
         }
     }
 }

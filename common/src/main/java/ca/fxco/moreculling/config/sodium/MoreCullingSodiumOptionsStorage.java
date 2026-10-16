@@ -3,7 +3,6 @@ package ca.fxco.moreculling.config.sodium;
 import ca.fxco.moreculling.MoreCulling;
 import ca.fxco.moreculling.config.MoreCullingConfig;
 import ca.fxco.moreculling.config.option.LeavesCullingMode;
-import me.shedaniel.autoconfig.AutoConfig;
 
 public class MoreCullingSodiumOptionsStorage {
 
@@ -12,7 +11,7 @@ public class MoreCullingSodiumOptionsStorage {
     }
 
     public void save() {
-        AutoConfig.getConfigHolder(MoreCullingConfig.class).save();
+        ca.fxco.moreculling.MoreCulling.saveConfig();
     }
 
     public void setCloudCulling(boolean cloudCulling) {

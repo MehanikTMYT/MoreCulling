@@ -23,7 +23,9 @@ dependencies {
     implementation "net.caffeinemc:sodium-neoforge-mod:${project.sodium_version}"
     //implementation "maven.modrinth:client-tweaks:${project.clienttweaks_version}+neoforge-${project.minecraft_version}"
 
-    api "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
+    // fleet: Cloth Config removed
+
+    // api "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
     compileOnly "maven.modrinth:modernfix-mvus:${modernfix_version}-neoforge"
 
     implementation "me.fallenbreath:conditional-mixin-neoforge:${project.conditional_mixins_version}"

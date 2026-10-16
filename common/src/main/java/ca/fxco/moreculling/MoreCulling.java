@@ -2,8 +2,6 @@ package ca.fxco.moreculling;
 
 import ca.fxco.moreculling.config.ConfigUpdater;
 import ca.fxco.moreculling.config.MoreCullingConfig;
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.minecraft.client.resources.model.ModelManager;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -27,22 +25,17 @@ public class MoreCulling {
     public static Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
     public static MoreCullingConfig CONFIG;
 
-    public static void init() {
-        AutoConfig.register(MoreCullingConfig.class, (conf, clazz) -> new Toml4jConfigSerializer<>(conf, clazz) {
-            public MoreCullingConfig deserialize() {
-                try {
-                    return super.deserialize();
-                } catch (Exception e) {
-                    return this.createDefault();
-                }
-            }
-        });
-        CONFIG = AutoConfig.getConfigHolder(MoreCullingConfig.class).getConfig();
+    private static java.nio.file.Path configFile;
+
+    /** Fleet build: config is read by MoreCullingConfigIO (same moreculling.toml), no Cloth Config / AutoConfig. */
+    public static void init(java.nio.file.Path configDir) {
+        configFile = ca.fxco.moreculling.config.MoreCullingConfigIO.file(configDir);
+        CONFIG = ca.fxco.moreculling.config.MoreCullingConfigIO.load(configFile);
         ConfigUpdater.updateConfig(CONFIG);
         CONFIG.modCompatibility.defaultReturnValue(CONFIG.useOnModdedBlocksByDefault);
     }
 
     public static void saveConfig() {
-        AutoConfig.getConfigHolder(MoreCullingConfig.class).save();
+        ca.fxco.moreculling.config.MoreCullingConfigIO.save(configFile, CONFIG);
     }
 }

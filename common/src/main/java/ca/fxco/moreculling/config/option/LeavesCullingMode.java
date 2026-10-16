@@ -1,10 +1,9 @@
 package ca.fxco.moreculling.config.option;
 
-import me.shedaniel.clothconfig2.gui.entries.SelectionListEntry;
 import net.minecraft.network.chat.Component;
 import org.jetbrains.annotations.NotNull;
 
-public enum LeavesCullingMode implements SelectionListEntry.Translatable {
+public enum LeavesCullingMode {
     DEFAULT("options.gamma.default"),
     FAST("options.clouds.fast"),
     STATE("moreculling.config.options.blockstate"),
@@ -30,7 +29,6 @@ public enum LeavesCullingMode implements SelectionListEntry.Translatable {
         return Component.translatable(this.translationKey);
     }
 
-    @Override
     public @NotNull String getKey() {
         return this.translationKey;
     }

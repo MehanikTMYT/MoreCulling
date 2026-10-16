@@ -34,7 +34,8 @@ neoForge {
 dependencies {
     runtimeOnly "maven.modrinth:sodium:mc26.1.2-0.8.12-neoforge"
     compileOnly "net.caffeinemc:sodium-neoforge-mod:${project.sodium_version}"
-    runtimeOnly "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
+    // fleet: Cloth Config removed
+    // runtimeOnly "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
 
     //implementation "maven.modrinth:client-tweaks:${project.clienttweaks_version}+neoforge-${project.minecraft_version}"
     //implementation "maven.modrinth:balm:${project.clienttweaks_version}+neoforge-${project.minecraft_version}"

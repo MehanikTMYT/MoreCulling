@@ -2,17 +2,12 @@ package ca.fxco.moreculling.config;
 
 import ca.fxco.moreculling.config.option.LeavesCullingMode;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
-import me.shedaniel.autoconfig.ConfigData;
-import me.shedaniel.autoconfig.annotation.Config;
-import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Config(name = "moreculling")
-public class MoreCullingConfig implements ConfigData {
+public class MoreCullingConfig {
 
-    @ConfigEntry.Gui.Excluded
     public int version = 0;
 
     // You can disable the sodium menu in the config
