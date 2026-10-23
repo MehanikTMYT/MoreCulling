@@ -16,5 +16,6 @@ plugins {
 // This should match the folder name of the project, or else IDEA may complain (see https://youtrack.jetbrains.com/issue/IDEA-317606)
 rootProject.name = 'MoreCulling'
 include('common')
-include('fabric')
+// fleet: NeoForge-only fork (Fabric half still pulls Cloth Config)
+// include('fabric')
 include('neoforge')
