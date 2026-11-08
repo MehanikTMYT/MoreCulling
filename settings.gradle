@@ -17,5 +17,4 @@ plugins {
 rootProject.name = 'MoreCulling'
 include('common')
 // fleet: NeoForge-only fork (Fabric half still pulls Cloth Config)
-// include('fabric')
 include('neoforge')

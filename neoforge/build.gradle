@@ -35,14 +35,13 @@ dependencies {
     runtimeOnly "maven.modrinth:sodium:mc26.1.2-0.8.12-neoforge"
     compileOnly "net.caffeinemc:sodium-neoforge-mod:${project.sodium_version}"
     // fleet: Cloth Config removed
-    // runtimeOnly "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
 
     //implementation "maven.modrinth:client-tweaks:${project.clienttweaks_version}+neoforge-${project.minecraft_version}"
     //implementation "maven.modrinth:balm:${project.clienttweaks_version}+neoforge-${project.minecraft_version}"
 
     implementation(jarJar("me.fallenbreath:conditional-mixin-neoforge:${project.conditional_mixins_version}"))
 
-    compileOnly "maven.modrinth:modernfix-mvus:${modernfix_version}-neoforge"
+    implementation "maven.modrinth:modernfix:${modernfix_version}+mc${minecraft_version}"
 
     compileOnly(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${project.mixinsquared_version}"))
     implementation(jarJar("com.github.bawnorton.mixinsquared:mixinsquared-neoforge:${project.mixinsquared_version}"))

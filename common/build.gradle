@@ -25,8 +25,7 @@ dependencies {
 
     // fleet: Cloth Config removed
 
-    // api "me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}"
-    compileOnly "maven.modrinth:modernfix-mvus:${modernfix_version}-neoforge"
+    compileOnly "maven.modrinth:modernfix-mvus:${modernfix_mvus_version}-neoforge"
 
     implementation "me.fallenbreath:conditional-mixin-neoforge:${project.conditional_mixins_version}"
     implementation(annotationProcessor("com.github.bawnorton.mixinsquared:mixinsquared-common:${project.mixinsquared_version}"))
